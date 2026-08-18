@@ -3,280 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda Pabisz | Data Analytics & Marketing Portfolio</title>
+  <title>Amanda Pabisz | MIS & Marketing Portfolio</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
-      --bg-gradient: radial-gradient(circle at 15% 15%, #0f172a 0%, #090d16 100%);
-      --card-bg: rgba(17, 24, 39, 0.7);
-      --card-border: rgba(255, 255, 255, 0.1);
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-hover: #172033;
+      --border: #1f293d;
+      --border-accent: #334155;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent-cyan: #38bdf8;
-      --accent-violet: #818cf8;
-      --accent-glow: rgba(56, 189, 248, 0.25);
-      --btn-glow: rgba(129, 140, 248, 0.4);
+      --text-sub: #64748b;
+      --primary: #38bdf8;
+      --primary-dim: rgba(56, 189, 248, 0.1);
+      --accent: #818cf8;
+      --accent-dim: rgba(129, 140, 248, 0.1);
+      --badge-bg: rgba(255, 255, 255, 0.04);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body { 
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; 
-      background: #090d16;
-      background-image: var(--bg-gradient);
-      color: var(--text-main); 
-      line-height: 1.6; 
-      padding: 3rem 1.5rem;
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 3rem 1.25rem;
       min-height: 100vh;
-      perspective: 1000px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 900px; margin: 0 auto; }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-    /* 3D GLASS HERO CARD */
+    /* HEADER / HERO */
     .hero {
-      position: relative;
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 3.5rem 3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
       margin-bottom: 3rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
-      transform-style: preserve-3d;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .hero:hover {
-      transform: translateY(-4px) rotateX(1deg) rotateY(-1deg);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 45px var(--accent-glow);
     }
 
     .badge-fsu {
-      display: inline-block;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: var(--accent-cyan);
-      padding: 0.35rem 0.9rem;
-      border-radius: 50px;
-      font-size: 0.825rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-dim);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 0.4rem;
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+      color: #ffffff;
     }
 
     .hero .tagline {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary);
       margin-bottom: 1.25rem;
     }
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 700px;
+      font-size: 1.025rem;
+      max-width: 720px;
       margin-bottom: 2rem;
+      line-height: 1.65;
     }
 
     .stats-row {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
 
     .stat-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
-      padding: 0.75rem 1.25rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.85rem 1.25rem;
       border-radius: 12px;
+      min-width: 140px;
     }
 
-    .stat-box .num { font-size: 1.3rem; font-weight: 800; color: var(--accent-cyan); }
-    .stat-box .label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+    .stat-box .num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
 
-    .links { display: flex; gap: 1rem; flex-wrap: wrap; }
-    
+    .stat-box .label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
-      color: #0f172a;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      background: var(--primary);
+      color: #090d16;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px var(--accent-glow);
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px var(--accent-glow);
+      background: #7dd3fc;
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--badge-bg);
       color: var(--text-main);
-      border: 1px solid var(--card-border);
-      box-shadow: none;
+      border: 1px solid var(--border-accent);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--text-muted);
+      transform: translateY(-1px);
     }
 
     /* SECTIONS */
     section { margin-bottom: 3.5rem; }
 
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1.75rem;
-      letter-spacing: -0.02em;
+    .section-header {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
     }
 
-    /* 3D CARDS GRID */
-    .grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    /* CARDS */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 
     .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2.25rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px) scale(1.01);
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--accent-glow);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
     }
 
-    .card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
-    .card .subtitle { color: var(--accent-violet); font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
-    .card p { color: var(--text-muted); font-size: 0.975rem; margin-bottom: 1.25rem; }
-
-    /* IMAGE / SCREENSHOT PLACEHOLDER */
-    .screenshot-placeholder {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-      border: 1px dashed rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
+    .card-header {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: 1.25rem;
-      transition: border-color 0.3s ease;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
-    .screenshot-placeholder:hover {
-      border-color: var(--accent-cyan);
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
     }
 
-    .screenshot-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .tag {
-      background: rgba(129, 140, 248, 0.12);
-      color: var(--accent-violet);
-      border: 1px solid rgba(129, 140, 248, 0.3);
-      padding: 0.3rem 0.75rem;
-      border-radius: 8px;
+    .card .date {
       font-size: 0.8rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    .card .subtitle {
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      background: var(--badge-bg);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-weight: 600;
     }
 
     .card-bullets { list-style: none; }
+
     .card-bullets li {
       position: relative;
-      padding-left: 1.5rem;
+      padding-left: 1.35rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.925rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
     }
+
     .card-bullets li::before {
-      content: "▹";
+      content: "•";
       position: absolute;
-      left: 0;
-      color: var(--accent-cyan);
+      left: 0.25rem;
+      color: var(--primary);
       font-weight: bold;
+      font-size: 1.1rem;
     }
 
     /* SKILLS GRID */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.25rem;
     }
 
     .skill-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent-cyan);
     }
 
     .skill-card h4 {
-      color: var(--accent-cyan);
-      font-size: 1rem;
+      color: var(--primary);
+      font-size: 0.95rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .skill-card p {
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.875rem;
+      line-height: 1.55;
     }
 
     footer {
       text-align: center;
-      color: var(--text-muted);
-      font-size: 0.875rem;
+      color: var(--text-sub);
+      font-size: 0.825rem;
       margin-top: 5rem;
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid var(--border);
       padding-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 1rem; }
+      .hero { padding: 2rem 1.5rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .card { padding: 1.5rem; }
+      .stats-row { gap: 0.75rem; }
+      .stat-box { flex: 1 1 calc(50% - 0.75rem); }
     }
   </style>
 </head>
@@ -286,11 +315,11 @@
     
     <!-- HERO SECTION -->
     <header class="hero">
-      <span class="badge-fsu">Florida State University '26 • MIS & Marketing</span>
+      <div class="badge-fsu">Florida State University '26 • MIS & Marketing</div>
       <h1>Amanda Pabisz</h1>
-      <div class="tagline">Data Analytics • Consumer Insights • Marketing Strategy</div>
+      <div class="tagline">Data Analysis • Market Research • Technology & SaaS</div>
       <p>
-        Translating complex database architectures and transactional datasets into clear strategic decisions. Experienced in relational modeling, customer segmentation, pricing optimization, and data visualization.
+        Recent FSU graduate with a dual background in Management Information Systems and Marketing. Experienced in relational database design, SQL querying, demand forecasting, and operational problem-solving.
       </p>
 
       <div class="stats-row">
@@ -304,151 +333,165 @@
         </div>
         <div class="stat-box">
           <div class="num">$25k+</div>
-          <div class="label">High-Sale Shift Lead</div>
+          <div class="label">Peak Shift Sales Lead</div>
         </div>
       </div>
 
       <div class="links">
-        <a href="Resume.pdf" target="_blank" class="btn">View Resume (PDF)</a>
-        <a href="https://www.linkedin.com/in/amandapabisz" target="_blank" class="btn btn-secondary">LinkedIn</a>
-        <a href="mailto:amandapabisz3@icloud.com" class="btn btn-secondary">Contact Me</a>
+        <a href="AmandaPabisz.Resume.pdf" target="_blank" class="btn">View Resume (PDF)</a>
+        <a href="https://www.linkedin.com/in/amandapabisz" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+        <a href="mailto:amandapabisz3@icloud.com" class="btn btn-secondary">Get In Touch</a>
       </div>
     </header>
 
-    <!-- TECHNICAL PROJECTS -->
-    <section>
-      <h2>Featured Analytics Projects</h2>
+    <!-- TECHNICAL & ANALYTICAL PROJECTS -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>Quantitative & Analytics Projects</h2>
+        <span class="section-subtitle">Academic & Case Work</span>
+      </div>
+
       <div class="grid">
         
         <!-- PROJECT 1 -->
         <div class="card">
-          <h3>Transaction Analytics — Sam's Club Datamart</h3>
-          <div class="subtitle">Big Data Analytics • Teradata & Tableau</div>
+          <div class="card-header">
+            <h3>NCAA March Madness Database Design</h3>
+            <span class="date">Spring 2026</span>
+          </div>
+          <div class="subtitle">Relational Architecture & SQL Modeling</div>
           <div class="tags">
-            <span class="tag">Teradata</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Big Data</span>
-            <span class="tag">Pattern Analytics</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Normalized ERD</span>
+            <span class="tag">Relational Modeling</span>
+            <span class="tag">Multi-Table JOINs</span>
           </div>
-          
-          <!-- Image Placeholder for Screenshot -->
-          <div class="screenshot-placeholder">
-            <span>📷 Screenshot Placeholder: Upload Tableau Dashboard Image</span>
-          </div>
-
           <ul class="card-bullets">
-            <li>Queried a Teradata-based enterprise datamart to extract and analyze high-volume transactional customer data.</li>
-            <li>Visualized key behavioral trends and purchasing patterns in Tableau to identify strategic revenue opportunities.</li>
+            <li>Architected a normalized Entity-Relationship Diagram (ERD) to model multi-year tournament and player statistics without data redundancy.</li>
+            <li>Constructed complex SQL queries utilizing subqueries and multi-table JOINs to address core stakeholder analysis questions.</li>
           </ul>
         </div>
 
         <!-- PROJECT 2 -->
         <div class="card">
-          <h3>NCAA March Madness Database Design</h3>
-          <div class="subtitle">Database Management • Relational Architecture & SQL</div>
+          <div class="card-header">
+            <h3>Transaction Analytics — Enterprise Datamart</h3>
+            <span class="date">Spring 2026</span>
+          </div>
+          <div class="subtitle">Big Data Analysis & Visual Dashboards</div>
           <div class="tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Normalized ERD</span>
-            <span class="tag">Database Design</span>
-            <span class="tag">Multi-Table Joins</span>
+            <span class="tag">Teradata</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Datamart Querying</span>
+            <span class="tag">Pattern Analysis</span>
           </div>
-
-          <!-- Image Placeholder for Screenshot -->
-          <div class="screenshot-placeholder">
-            <span>📷 Screenshot Placeholder: Upload ERD Diagram or SQL Query Image</span>
-          </div>
-
           <ul class="card-bullets">
-            <li>Designed and implemented a normalized Entity-Relationship Diagram (ERD) to structure multi-year NCAA tournament data.</li>
-            <li>Devised complex, business-driven SQL queries using advanced multi-table JOINs to address core stakeholder analysis questions.</li>
+            <li>Queried a large-scale Teradata enterprise data mart to extract and analyze high-volume customer purchasing behaviors.</li>
+            <li>Constructed interactive Tableau dashboards to visualize transaction patterns, segment customer volume, and identify revenue trends.</li>
           </ul>
         </div>
 
         <!-- PROJECT 3 -->
         <div class="card">
-          <h3>Consumer Demand & Revenue Optimization Initiative</h3>
-          <div class="subtitle">Consumer Demand Analytics • Predictive Modeling & Optimization</div>
+          <div class="card-header">
+            <h3>Consumer Demand & Revenue Optimization Initiative</h3>
+            <span class="date">Fall 2025</span>
+          </div>
+          <div class="subtitle">Predictive Modeling & Pricing Analytics</div>
           <div class="tags">
             <span class="tag">Triple Exponential Smoothing</span>
             <span class="tag">Excel Solver</span>
-            <span class="tag">Regression Modeling</span>
+            <span class="tag">Regressions</span>
             <span class="tag">Pricing Strategy</span>
           </div>
-
-          <!-- Image Placeholder for Screenshot -->
-          <div class="screenshot-placeholder">
-            <span>📷 Screenshot Placeholder: Upload Excel Model / Solver Dashboard Image</span>
-          </div>
-
           <ul class="card-bullets">
-            <li>Forecasted seasonal demand patterns for consumer electronics utilizing triple exponential smoothing algorithms.</li>
-            <li>Optimized price elasticity and pricing structures through linear/logistic regressions and automated complex scenarios using Excel Solver.</li>
+            <li>Modeled seasonal consumer demand patterns across consumer electronics utilizing triple exponential smoothing techniques.</li>
+            <li>Formulated pricing optimization frameworks using linear/logistic regressions and automated constraint modeling in Excel Solver.</li>
           </ul>
         </div>
 
       </div>
     </section>
 
-    <!-- SKILLS & EXPERTISE -->
-    <section>
-      <h2>Technical & Operational Skills</h2>
+    <!-- CORE SKILLS -->
+    <section id="skills">
+      <div class="section-header">
+        <h2>Core Competencies</h2>
+        <span class="section-subtitle">Technical, Analytical & Strategy</span>
+      </div>
+
       <div class="skills-grid">
-        
         <div class="skill-card">
-          <h4>Analytics & Big Data</h4>
-          <p>Excel (Solver, Regressions, Pivot Tables), SQL, Teradata Datamarts, Tableau Visualizations, Database Logic.</p>
+          <h4>Data & Analytics</h4>
+          <p>SQL, Relational Database Modeling (ERD), Tableau Dashboards, Teradata Datamarts, Big Data Analysis.</p>
         </div>
-
         <div class="skill-card">
-          <h4>Strategy & Marketing</h4>
-          <p>Pricing Optimization, Consumer Demand Forecasting, Triple Exponential Smoothing, CRM Concepts, Customer Segmentation.</p>
+          <h4>Strategy & Quantitative Modeling</h4>
+          <p>Linear & Logistic Regressions, Excel Solver, Demand Forecasting (Exponential Smoothing), Pricing Optimization, CRM Concepts.</p>
         </div>
-
         <div class="skill-card">
           <h4>Leadership & Execution</h4>
-          <p>Shift Operations, High-Volume Inventory Management, Conflict Resolution, Event Planning, Team Communication.</p>
+          <p>High-Volume Operations, Shift Delegation ($25k+ shifts), POS Systems, Real-Time Problem Solving, Cross-Functional Communication.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- PROFESSIONAL EXPERIENCE -->
-    <section>
-      <h2>Leadership & Experience</h2>
+    <!-- WORK EXPERIENCE -->
+    <section id="experience">
+      <div class="section-header">
+        <h2>Professional & Leadership Experience</h2>
+        <span class="section-subtitle">Operational & Customer-Facing</span>
+      </div>
+
       <div class="grid">
         
+        <!-- EXPERIENCE 1 -->
         <div class="card">
-          <h3>Shift Leader / Server</h3>
-          <div class="subtitle">Little Masa • Tallahassee, FL (May 2024 – July 2026)</div>
+          <div class="card-header">
+            <h3>Shift Leader & Server</h3>
+            <span class="date">May 2024 – July 2026</span>
+          </div>
+          <div class="subtitle">Little Masa • Tallahassee, FL</div>
           <ul class="card-bullets">
-            <li>Delegated team responsibilities during high-volume periods, successfully managing peak shifts exceeding $25,000 in sales.</li>
-            <li>Proactively managed restaurant inventory and resolved customer conflicts to ensure optimal service delivery.</li>
+            <li>Delegated floor responsibilities and managed real-time operations during peak rushes, overseeing high-volume shifts exceeding $25,000 in sales.</li>
+            <li>Proactively monitored inventory levels and resolved customer escalations to maintain high service and operational standards.</li>
           </ul>
         </div>
 
+        <!-- EXPERIENCE 2 -->
         <div class="card">
-          <h3>Barista & Event Coordinator</h3>
-          <div class="subtitle">Calvin's Coffee House • Tallahassee, FL (Jan 2024 – July 2026)</div>
+          <div class="card-header">
+            <h3>Barista & Event Coordinator</h3>
+            <span class="date">Jan 2024 – July 2026</span>
+          </div>
+          <div class="subtitle">Calvin's Coffee House • Tallahassee, FL</div>
           <ul class="card-bullets">
-            <li>Created and launched monthly signature promotional drinks to elevate customer engagement and brand loyalty.</li>
-            <li>Executed monthly after-hours events to strengthen community ties and foster brand advocacy.</li>
+            <li>Developed and launched monthly signature promotional drinks to strengthen brand engagement and repeat customer loyalty.</li>
+            <li>Planned and executed monthly after-hours community events to expand local reach and foster brand advocacy.</li>
+            <li>Maintained clear team communication during high-volume morning rushes to maximize order efficiency.</li>
           </ul>
         </div>
 
+        <!-- EXPERIENCE 3 -->
         <div class="card">
-          <h3>Operations Assistant & Marina Attendant</h3>
-          <div class="subtitle">Lakeshore Resort and Marina • Hampton, TN (May 2023 – Aug 2023)</div>
+          <div class="card-header">
+            <h3>Operations Assistant & Marina Attendant</h3>
+            <span class="date">May 2023 – Aug 2023</span>
+          </div>
+          <div class="subtitle">Lakeshore Resort and Marina • Hampton, TN</div>
           <ul class="card-bullets">
-            <li>Streamlined daily staging and rental workflows for an average fleet of 25 vessels.</li>
-            <li>Maintained seamless POS transactions and vessel communications over low-bandwidth Wi-Fi and VHF radios during a 2-month network outage.</li>
+            <li>Managed staging, customer onboarding, and daily rental workflows for an average fleet of 25 commercial vessels.</li>
+            <li>Maintained uninterrupted POS transactions and vessel communications using low-bandwidth Wi-Fi and VHF radio systems during an extended 2-month local network outage.</li>
+            <li>Delivered high-touch client service that drove repeat rentals and positive customer referrals.</li>
           </ul>
         </div>
 
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      <p>© 2026 Amanda Pabisz • Built with custom CSS & hosted on GitHub Pages</p>
+      <p>© 2026 Amanda Pabisz • B.S. in Management Information Systems & Marketing</p>
     </footer>
 
   </div>
